@@ -3,6 +3,7 @@ import Movie from "../models/movie-model.js";
 export const store = async (req, res) => {
   try {
     const content = await Movie.create(req.body);
+
     res.status(201).json(content);
   } catch (error) {
     res.status(400).send(error);

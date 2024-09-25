@@ -1,14 +1,10 @@
 import { Router } from "express";
-import { signup } from "../controllers/user-controller";
-import { login } from "../controllers/user-controller"
+import { signup, login } from "../controllers/user-controller.js";
+import jwtAuthenticator from "../middlewares/jwt-authenticator.js";
 
 const router = Router();
 
-
-// CRUD USUARIO
-
-
-router.post("/singnup", signup)
-router.post("/login", )
+router.post("/signup", signup);
+router.post("/login", login)
 
 export default router;
